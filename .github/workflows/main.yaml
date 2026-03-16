@@ -270,7 +270,6 @@ jobs:
       - name: Create NuGet package
         run: |
           dotnet pack -c Release -o out src/Weaviate.Client.Managed/
-          dotnet pack -c Release -o out src/Weaviate.Client.Managed.Analyzers/
 
       - name: Push package to NuGet
         run: dotnet nuget push './out/*.nupkg' --skip-duplicate --api-key ${{ secrets.NUGET_APIKEY }} --source https://api.nuget.org/v3/index.json
