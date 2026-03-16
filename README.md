@@ -9,11 +9,11 @@ Define collections with attributes. Query with LINQ. Migrate schemas safely. **S
 <br/>
 
 [![Build](https://github.com/weaviate/csharp-client-managed/actions/workflows/main.yaml/badge.svg)](https://github.com/weaviate/csharp-client-managed/actions/workflows/main.yaml)
-[![NuGet](https://badgen.net/nuget/v/Weaviate.Client.Managed?icon=nuget)](https://www.nuget.org/packages/Weaviate.Client.Managed)
-[![Downloads](https://badgen.net/nuget/dt/Weaviate.Client.Managed)](https://www.nuget.org/packages/Weaviate.Client.Managed)
+[![NuGet](https://img.shields.io/nuget/v/Weaviate.Client.Managed?logo=nuget&color=004880)](https://www.nuget.org/packages/Weaviate.Client.Managed)
+[![Downloads](https://img.shields.io/nuget/dt/Weaviate.Client.Managed?color=004880)](https://www.nuget.org/packages/Weaviate.Client.Managed)
 [![.NET](https://img.shields.io/badge/.NET-8.0%20%7C%209.0-512BD4?logo=dotnet)](https://dotnet.microsoft.com/)
 [![Weaviate](https://img.shields.io/badge/Weaviate-1.31%2B-00D1A9?logo=weaviate&logoColor=white)](https://weaviate.io/)
-[![License](https://badgen.net/github/license/weaviate/csharp-client-managed)](LICENSE)
+[![License](https://img.shields.io/github/license/weaviate/csharp-client-managed)](LICENSE)
 
 </div>
 
