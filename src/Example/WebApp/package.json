@@ -1,0 +1,22 @@
+{
+  "name": "webapp",
+  "version": "1.0.0",
+  "description": "AI Product Search - SvelteKit Frontend",
+  "type": "module",
+  "scripts": {
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
+  },
+  "keywords": ["svelte", "sveltekit", "weaviate", "vector-search"],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@sveltejs/adapter-node": "^5.5.3",
+    "@sveltejs/kit": "^2.52.0",
+    "svelte": "^5.51.3",
+    "vite": "^7.3.1"
+  }
+}

@@ -1,0 +1,36 @@
+services:
+  weaviate:
+    command:
+      - --host
+      - 0.0.0.0
+      - --port
+      - '8080'
+      - --scheme
+      - http
+      - --write-timeout=600s
+    image: cr.weaviate.io/semitechnologies/weaviate:${WEAVIATE_VERSION}
+    ports:
+      - "8080:8080"
+      - "50051:50051"
+    restart: on-failure:0
+    environment:
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      ENABLE_MODULES: text2vec-transformers,text2vec-cohere,backup-filesystem,generative-dummy,generative-anyscale,reranker-dummy,reranker-cohere,text2vec-ollama,generative-ollama
+      BACKUP_FILESYSTEM_PATH: "/tmp/backups"
+      CLUSTER_GOSSIP_BIND_PORT: "7100"
+      CLUSTER_DATA_BIND_PORT: "7101"
+      CLUSTER_HOSTNAME: "singlenode"
+      AUTOSCHEMA_ENABLED: 'false'
+      DISABLE_TELEMETRY: 'true'
+      DISABLE_LAZY_LOAD_SHARDS: 'true'
+      GRPC_MAX_MESSAGE_SIZE: 100000000  # 100mb
+      #ASYNC_INDEXING: 'true'
+      TRANSFORMERS_INFERENCE_API: http://transformers:8080
+  transformers:
+    image: cr.weaviate.io/semitechnologies/model2vec-inference:minishlab-potion-retrieval-32M
+    ports:
+      - "8000:8080"
+    environment:
+      ENABLE_CUDA: 0

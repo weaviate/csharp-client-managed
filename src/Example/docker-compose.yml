@@ -1,0 +1,50 @@
+# Docker Compose for Weaviate Services Only
+#
+# This file starts ONLY the Weaviate vector database and text2vec-transformers.
+# The backend (ASP.NET Core) and frontend (SvelteKit) should be run manually
+# for best development experience and to avoid platform-specific build issues.
+#
+# Usage:
+#   docker compose up -d
+#
+# Then run backend and frontend manually:
+#   cd WebApi && dotnet run
+#   cd WebApp && npm run dev
+
+services:
+  weaviate:
+    image: cr.weaviate.io/semitechnologies/weaviate:1.34.0
+    ports:
+      # Ports MUST be exposed since backend/frontend run on host (not in Docker)
+      - "8080:8080"   # REST API - backend needs access
+      - "50051:50051" # gRPC - backend needs access
+    environment:
+      QUERY_DEFAULTS_LIMIT: 25
+      AUTHENTICATION_ANONYMOUS_ACCESS_ENABLED: 'true'
+      PERSISTENCE_DATA_PATH: '/var/lib/weaviate'
+      DEFAULT_VECTORIZER_MODULE: 'text2vec-transformers'
+      ENABLE_MODULES: 'text2vec-transformers'
+      TRANSFORMERS_INFERENCE_API: 'http://t2v-transformers:8080'
+      CLUSTER_HOSTNAME: 'node1'
+    volumes:
+      - weaviate_data:/var/lib/weaviate
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/v1/.well-known/ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 30s
+
+  t2v-transformers:
+    image: cr.weaviate.io/semitechnologies/transformers-inference:sentence-transformers-all-MiniLM-L6-v2
+    environment:
+      ENABLE_CUDA: '0'
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:8080/.well-known/ready"]
+      interval: 5s
+      timeout: 3s
+      retries: 30
+      start_period: 60s
+
+volumes:
+  weaviate_data:

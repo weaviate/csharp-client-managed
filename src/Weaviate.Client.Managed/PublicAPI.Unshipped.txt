@@ -1,0 +1,164 @@
+#nullable enable
+Weaviate.Client.Managed.Aggregates.AggregateStarter<TModel>
+Weaviate.Client.Managed.Aggregates.AggregateStarter<TModel>.WithMetrics<TResult>() -> Weaviate.Client.Managed.TypedAggregateBuilder<TModel!, TResult!>!
+Weaviate.Client.Managed.Extensions.ManagedCollectionExtensions
+static Weaviate.Client.Managed.Extensions.ManagedCollectionExtensions.AsManaged<T>(this Weaviate.Client.CollectionClient! collection) -> Weaviate.Client.Managed.ManagedCollection<T!>!
+static Weaviate.Client.Managed.Extensions.ManagedCollectionExtensions.CreateManaged<T>(this Weaviate.Client.CollectionsClient! collections, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Managed.ManagedCollection<T!>!>!
+static Weaviate.Client.Managed.Extensions.ManagedCollectionExtensions.Managed<T>(this Weaviate.Client.CollectionsClient! collections, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Managed.ManagedCollection<T!>!>!
+Weaviate.Client.Managed.ManagedCollection<T>
+Weaviate.Client.Managed.ManagedCollection<T>.Aggregate.get -> Weaviate.Client.Managed.Aggregates.AggregateStarter<T!>!
+Weaviate.Client.Managed.ManagedCollection<T>.CheckMigrate(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Managed.Migrations.MigrationPlan!>!
+Weaviate.Client.Managed.ManagedCollection<T>.Delete(System.Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Weaviate.Client.Managed.ManagedCollection<T>.DeleteCollection(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Weaviate.Client.Managed.ManagedCollection<T>.DeleteMany(System.Linq.Expressions.Expression<System.Func<T!, bool>!>! where, bool dryRun = false, bool verbose = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.DeleteManyResult!>!
+Weaviate.Client.Managed.ManagedCollection<T>.Exists(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<bool>!
+Weaviate.Client.Managed.ManagedCollection<T>.ExportConfig(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.CollectionConfigExport?>!
+Weaviate.Client.Managed.ManagedCollection<T>.Inner.get -> Weaviate.Client.CollectionClient!
+Weaviate.Client.Managed.ManagedCollection<T>.Insert(T! obj, System.Guid? id = null, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Guid>!
+Weaviate.Client.Managed.ManagedCollection<T>.InsertMany(System.Collections.Generic.IEnumerable<T!>! objects, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.BatchInsertResponse!>!
+Weaviate.Client.Managed.ManagedCollection<T>.Migrate(bool checkFirst = true, bool allowBreakingChanges = false, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Managed.Migrations.MigrationPlan!>!
+Weaviate.Client.Managed.ManagedCollection<T>.Name.get -> string!
+Weaviate.Client.Managed.ManagedCollection<T>.Query.get -> Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T!>!
+Weaviate.Client.Managed.ManagedCollection<T>.Replace(T! obj, System.Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Weaviate.Client.Managed.ManagedCollection<T>.Tenant.get -> string?
+Weaviate.Client.Managed.ManagedCollection<T>.Update(T! obj, System.Guid id, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task!
+Weaviate.Client.Managed.ManagedCollection<T>.WithTenant(string! tenant) -> Weaviate.Client.Managed.ManagedCollection<T!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.Execute<TResult>(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.Typed.AggregateResult<TResult!>!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.ExecuteGrouped<TResult>(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.Typed.AggregateGroupByResult<TResult!>!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.ExecuteGroupedUntyped(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.AggregateGroupByResult!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.ExecuteUntyped(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Models.AggregateResult!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.GroupBy<TProp>(System.Linq.Expressions.Expression<System.Func<TModel!, TProp>!>! property, uint? limit = null) -> Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.Where(System.Linq.Expressions.Expression<System.Func<TModel!, bool>!>! predicate) -> Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.WithMetrics(params Weaviate.Client.Models.Aggregate.Metric![]! metrics) -> Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel!>!
+Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel>.WithMetrics<TResult>() -> Weaviate.Client.Managed.ManagedCollectionAggregateBuilder<TModel!>!
+Weaviate.Client.Managed.Models.GroupByGroup<T>
+Weaviate.Client.Managed.Models.GroupByGroup<T>.Count.get -> int
+Weaviate.Client.Managed.Models.GroupByGroup<T>.MaxDistance.get -> float
+Weaviate.Client.Managed.Models.GroupByGroup<T>.MaxDistance.init -> void
+Weaviate.Client.Managed.Models.GroupByGroup<T>.MinDistance.get -> float
+Weaviate.Client.Managed.Models.GroupByGroup<T>.MinDistance.init -> void
+Weaviate.Client.Managed.Models.GroupByGroup<T>.Name.get -> string!
+Weaviate.Client.Managed.Models.GroupByGroup<T>.Name.init -> void
+Weaviate.Client.Managed.Models.GroupByGroup<T>.Objects.get -> System.Collections.Generic.IList<Weaviate.Client.Managed.Models.GroupByQueryResult<T!>!>!
+Weaviate.Client.Managed.Models.GroupByGroup<T>.Objects.init -> void
+Weaviate.Client.Managed.Models.GroupByQueryResponse<T>
+Weaviate.Client.Managed.Models.GroupByQueryResponse<T>.Groups.get -> System.Collections.Generic.IDictionary<string!, Weaviate.Client.Managed.Models.GroupByGroup<T!>!>!
+Weaviate.Client.Managed.Models.GroupByQueryResponse<T>.Groups.init -> void
+Weaviate.Client.Managed.Models.GroupByQueryResponse<T>.Objects.get -> System.Collections.Generic.IList<Weaviate.Client.Managed.Models.GroupByQueryResult<T!>!>!
+Weaviate.Client.Managed.Models.GroupByQueryResponse<T>.Objects.init -> void
+Weaviate.Client.Managed.Models.GroupByQueryResult<T>
+Weaviate.Client.Managed.Models.GroupByQueryResult<T>.BelongsToGroup.get -> string!
+Weaviate.Client.Managed.Models.GroupByQueryResult<T>.BelongsToGroup.init -> void
+Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T>.Execute(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<Weaviate.Client.Managed.Query.QueryResult<T!>!>!>!
+Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T>.GroupBy<TProp>(System.Linq.Expressions.Expression<System.Func<T!, TProp>!>! property, uint numberOfGroups, uint objectsPerGroup) -> Weaviate.Client.Managed.Query.GroupByQueryExecutor<T!>!
+Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T>.Project<TProjection>() -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.GroupByQueryExecutor<T>
+Weaviate.Client.Managed.Query.GroupByQueryExecutor<T>.Execute(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<Weaviate.Client.Managed.Models.GroupByQueryResponse<T!>!>!
+Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T>.Targets(System.Func<Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!, Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!>! configure) -> Weaviate.Client.Managed.Query.CollectionMapperQueryClient<T!>!
+Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.Average = 2 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.ManualWeights = 5 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.Minimum = 3 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.None = 0 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.RelativeScore = 4 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorCombination.Sum = 1 -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.VectorAttribute
+Weaviate.Client.Managed.Attributes.VectorAttribute.VectorAttribute() -> void
+Weaviate.Client.Managed.Attributes.VectorAttribute.VectorName.get -> string?
+Weaviate.Client.Managed.Attributes.VectorAttribute.VectorName.set -> void
+Weaviate.Client.Managed.Attributes.VectorAttribute.Weight.get -> double
+Weaviate.Client.Managed.Attributes.VectorAttribute.Weight.set -> void
+Weaviate.Client.Managed.Attributes.QueryProjectionAttribute<T>.Combination.get -> Weaviate.Client.Managed.Attributes.VectorCombination
+Weaviate.Client.Managed.Attributes.QueryProjectionAttribute<T>.Combination.set -> void
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Average(params System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]! vectors) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Average(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, Weaviate.Client.Models.Vector! values)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.ManualWeights(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, double weight)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.ManualWeights(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, Weaviate.Client.Models.Vector! values, double weight)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Minimum(params System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]! vectors) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Minimum(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, Weaviate.Client.Models.Vector! values)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.RelativeScore(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, double weight)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.RelativeScore(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, Weaviate.Client.Models.Vector! values, double weight)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Sum(params System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]! vectors) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.TargetVectorBuilder<T>.Sum(params (System.Linq.Expressions.Expression<System.Func<T!, object!>!>! vector, Weaviate.Client.Models.Vector! values)[]! targets) -> Weaviate.Client.Managed.Query.TargetVectorBuilder<T!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.After(System.Guid cursor) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.AutoLimit(uint autoLimit) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.BM25(string! query, System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]? searchFields = null, Weaviate.Client.Models.BM25Operator? searchOperator = null) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Execute(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<Weaviate.Client.Managed.Query.QueryResult<TProjection!>!>!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Hybrid(string! query, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? alpha = null, Weaviate.Client.Models.HybridFusion? fusionType = null, float? maxVectorDistance = null) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Limit(uint limit) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.NearMedia(Weaviate.Client.Models.NearMediaInput.FactoryFn! media) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.NearObject(System.Guid objectId, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.NearText(string! text, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.NearVector(float[]! vectorValues, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Offset(uint offset) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Rerank(Weaviate.Client.Models.Rerank! rerank) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Sort<TProp>(System.Linq.Expressions.Expression<System.Func<T!, TProp>!>! property, bool descending = false) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.ProjectedQueryClient<T, TProjection>.Where(System.Linq.Expressions.Expression<System.Func<T!, bool>!>! predicate) -> Weaviate.Client.Managed.Query.ProjectedQueryClient<T!, TProjection!>!
+Weaviate.Client.Managed.Query.HybridConfig
+Weaviate.Client.Managed.Query.HybridConfig.Alpha.get -> float?
+Weaviate.Client.Managed.Query.HybridConfig.Alpha.init -> void
+Weaviate.Client.Managed.Query.HybridConfig.FusionType.get -> Weaviate.Client.Models.HybridFusion?
+Weaviate.Client.Managed.Query.HybridConfig.FusionType.init -> void
+Weaviate.Client.Managed.Query.HybridConfig.HybridConfig() -> void
+Weaviate.Client.Managed.Query.HybridConfig.MaxVectorDistance.get -> float?
+Weaviate.Client.Managed.Query.HybridConfig.MaxVectorDistance.init -> void
+Weaviate.Client.Managed.Query.NearMediaConfig
+Weaviate.Client.Managed.Query.NearMediaConfig.Certainty.get -> float?
+Weaviate.Client.Managed.Query.NearMediaConfig.Certainty.init -> void
+Weaviate.Client.Managed.Query.NearMediaConfig.Distance.get -> float?
+Weaviate.Client.Managed.Query.NearMediaConfig.Distance.init -> void
+Weaviate.Client.Managed.Query.NearMediaConfig.NearMediaConfig() -> void
+Weaviate.Client.Managed.Query.NearObjectConfig
+Weaviate.Client.Managed.Query.NearObjectConfig.Certainty.get -> float?
+Weaviate.Client.Managed.Query.NearObjectConfig.Certainty.init -> void
+Weaviate.Client.Managed.Query.NearObjectConfig.Distance.get -> float?
+Weaviate.Client.Managed.Query.NearObjectConfig.Distance.init -> void
+Weaviate.Client.Managed.Query.NearObjectConfig.NearObjectConfig() -> void
+Weaviate.Client.Managed.Query.NearTextConfig
+Weaviate.Client.Managed.Query.NearTextConfig.Certainty.get -> float?
+Weaviate.Client.Managed.Query.NearTextConfig.Certainty.init -> void
+Weaviate.Client.Managed.Query.NearTextConfig.Distance.get -> float?
+Weaviate.Client.Managed.Query.NearTextConfig.Distance.init -> void
+Weaviate.Client.Managed.Query.NearTextConfig.NearTextConfig() -> void
+Weaviate.Client.Managed.Query.NearVectorConfig
+Weaviate.Client.Managed.Query.NearVectorConfig.Certainty.get -> float?
+Weaviate.Client.Managed.Query.NearVectorConfig.Certainty.init -> void
+Weaviate.Client.Managed.Query.NearVectorConfig.Distance.get -> float?
+Weaviate.Client.Managed.Query.NearVectorConfig.Distance.init -> void
+Weaviate.Client.Managed.Query.NearVectorConfig.NearVectorConfig() -> void
+Weaviate.Client.Managed.Context.WeaviateContext.WeaviateContext(Weaviate.Client.WeaviateClient! client, Weaviate.Client.Managed.Context.WeaviateContextOptions! options) -> void
+Weaviate.Client.Managed.Context.WeaviateContextOptions<TContext>
+Weaviate.Client.Managed.Context.WeaviateContextOptions<TContext>.WeaviateContextOptions() -> void
+Weaviate.Client.Managed.DependencyInjection.WeaviateManagedServiceCollectionExtensions
+static Weaviate.Client.Managed.DependencyInjection.WeaviateManagedServiceCollectionExtensions.AddWeaviateContext<TContext>(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Weaviate.Client.Managed.Context.WeaviateContextOptions!>? configureOptions = null, Microsoft.Extensions.DependencyInjection.ServiceLifetime lifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+static Weaviate.Client.Managed.DependencyInjection.WeaviateManagedServiceCollectionExtensions.AddWeaviateContext<TContext>(this Microsoft.Extensions.DependencyInjection.IServiceCollection! services, System.Action<Weaviate.Client.Managed.Context.WeaviateContextOptions!>? configureOptions, bool eagerMigration, Microsoft.Extensions.DependencyInjection.ServiceLifetime lifetime = Microsoft.Extensions.DependencyInjection.ServiceLifetime.Singleton) -> Microsoft.Extensions.DependencyInjection.IServiceCollection!
+Weaviate.Client.Managed.Context.CollectionSet<T>.ElementType.get -> System.Type!
+Weaviate.Client.Managed.Context.CollectionSet<T>.Expression.get -> System.Linq.Expressions.Expression!
+Weaviate.Client.Managed.Context.CollectionSet<T>.GetAwaiter() -> System.Runtime.CompilerServices.TaskAwaiter<System.Collections.Generic.IEnumerable<T!>!>
+Weaviate.Client.Managed.Context.CollectionSet<T>.Provider.get -> System.Linq.IQueryProvider!
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>.ElementType.get -> System.Type!
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>.Expression.get -> System.Linq.Expressions.Expression!
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>.GetAwaiter() -> System.Runtime.CompilerServices.TaskAwaiter<System.Collections.Generic.IEnumerable<T!>!>
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>.GetEnumerator() -> System.Collections.Generic.IEnumerator<T!>!
+Weaviate.Client.Managed.Query.WeaviateQueryable<T>.Provider.get -> System.Linq.IQueryProvider!
+Weaviate.Client.Managed.Query.WeaviateQueryableExtensions
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.BM25<T>(this System.Linq.IQueryable<T!>! source, string! query, System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]? searchFields = null, Weaviate.Client.Models.BM25Operator? searchOperator = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.FirstAsync<T>(this System.Linq.IQueryable<T!>! source, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.FirstOrDefaultAsync<T>(this System.Linq.IQueryable<T!>! source, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<T?>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.GetAwaiter<T>(this System.Linq.IQueryable<T!>! source) -> System.Runtime.CompilerServices.TaskAwaiter<System.Collections.Generic.IEnumerable<T!>!>
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.Hybrid<T>(this System.Linq.IQueryable<T!>! source, string! query, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? alpha = null, Weaviate.Client.Models.HybridFusion? fusionType = null, float? maxVectorDistance = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.NearMedia<T>(this System.Linq.IQueryable<T!>! source, Weaviate.Client.Models.NearMediaInput.FactoryFn! media) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.NearObject<T>(this System.Linq.IQueryable<T!>! source, System.Guid objectId, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.NearText<T>(this System.Linq.IQueryable<T!>! source, string! text, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.NearVector<T>(this System.Linq.IQueryable<T!>! source, float[]! vectorValues, System.Linq.Expressions.Expression<System.Func<T!, object!>!>? vector = null, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.NearVector<T>(this System.Linq.IQueryable<T!>! source, float? certainty = null, float? distance = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.Rerank<T>(this System.Linq.IQueryable<T!>! source, string! property, string? query = null) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.ToQueryResultsAsync<T>(this System.Linq.IQueryable<T!>! source, System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken)) -> System.Threading.Tasks.Task<System.Collections.Generic.IEnumerable<Weaviate.Client.Managed.Models.QueryResult<T!>!>!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.WithMetadata<T>(this System.Linq.IQueryable<T!>! source, Weaviate.Client.Models.MetadataQuery! metadata) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.WithReferences<T>(this System.Linq.IQueryable<T!>! source, params System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]! references) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.WithCancellation<T>(this System.Linq.IQueryable<T!>! source, System.Threading.CancellationToken cancellationToken) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!
+static Weaviate.Client.Managed.Query.WeaviateQueryableExtensions.WithVectors<T>(this System.Linq.IQueryable<T!>! source, params System.Linq.Expressions.Expression<System.Func<T!, object!>!>![]! vectors) -> Weaviate.Client.Managed.Query.WeaviateQueryable<T!>!

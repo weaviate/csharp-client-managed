@@ -1,0 +1,14 @@
+<Solution>
+  <Folder Name="/src/Example/">
+    <Project Path="src/Example/Example.csproj" />
+    <Project Path="src/Example/WebApi/WebApi.csproj" />
+  </Folder>
+  <Folder Name="/src/Managed/">
+    <Project Path="src/Weaviate.Client.Managed/Weaviate.Client.Managed.csproj" />
+    <Project Path="src/Weaviate.Client.Managed.Tests/Weaviate.Client.Managed.Tests.csproj" />
+  </Folder>
+  <Folder Name="/src/Analyzers/">
+    <Project Path="src/Weaviate.Client.Managed.Analyzers/Weaviate.Client.Managed.Analyzers.csproj" />
+    <Project Path="src/Weaviate.Client.Managed.Analyzers.Tests/Weaviate.Client.Managed.Analyzers.Tests.csproj" />
+  </Folder>
+</Solution>
