@@ -9,6 +9,21 @@ namespace Weaviate.Client.Managed.Extensions;
 public static class WeaviateClientExtensions
 {
     /// <summary>
+    /// Returns a new <see cref="ClientConfiguration"/> with the
+    /// <c>X-Weaviate-Client-Integration</c> header set for the managed client.
+    /// Use this when constructing <see cref="WeaviateContext"/> without dependency injection.
+    /// </summary>
+    /// <param name="config">The base configuration.</param>
+    public static ClientConfiguration WithManagedIntegrationHeader(
+        this ClientConfiguration config
+    ) =>
+        config.WithIntegration(
+            WeaviateDefaults.IntegrationAgent(
+                DependencyInjection.WeaviateManagedServiceCollectionExtensions.IntegrationName
+            )
+        );
+
+    /// <summary>
     /// Creates a Weaviate collection from a C# class decorated with ORM attributes.
     /// The class must have a [WeaviateCollection] attribute or the class name will be used as the collection name.
     /// </summary>

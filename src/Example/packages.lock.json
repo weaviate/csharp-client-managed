@@ -362,8 +362,8 @@
       },
       "Weaviate.Client": {
         "type": "Transitive",
-        "resolved": "1.0.1",
-        "contentHash": "Ff7/q5DpshU532DDZJ5Zh86G1nxnlO6zwTqzo4x/UOBY1s3zLRfbNyArQ012gMHtxx/odpULgi2Gld7zfwVI5A==",
+        "resolved": "1.0.2",
+        "contentHash": "B/QmsqYDf/R2m3/GJtg+SuKStg/mQ6Dkv1C5KcROLyqpyt96gH3RWLUFGB6SKFxhJAAyBEp/+Hk+eSFOcoShSg==",
         "dependencies": {
           "Duende.IdentityModel": "7.1.0",
           "Google.Protobuf": "3.30.2",
@@ -383,7 +383,7 @@
           "Microsoft.Extensions.DependencyInjection.Abstractions": "[9.0.8, )",
           "Microsoft.Extensions.Hosting.Abstractions": "[9.0.8, )",
           "Microsoft.Extensions.Options": "[9.0.8, )",
-          "Weaviate.Client": "[1.0.1, )"
+          "Weaviate.Client": "[1.0.2, )"
         }
       }
     }

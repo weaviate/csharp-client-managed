@@ -25,7 +25,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Weaviate.Client.Managed\Weaviate.Client.Managed.csproj" />
-    <PackageReference Include="Weaviate.Client" Version="1.0.1" />
+    <PackageReference Include="Weaviate.Client" Version="1.0.2" />
   </ItemGroup>
 
 </Project>
