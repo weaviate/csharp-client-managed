@@ -4,7 +4,7 @@
 
 ### The Entity Framework experience for [Weaviate](https://weaviate.io).
 
-Define collections with attributes. Query with LINQ. Migrate schemas safely. **Ship faster.**
+A type-safe, attribute-driven .NET client that lets you define Weaviate collections as plain C# classes, query them with a LINQ-style fluent API, and evolve schemas with built-in migration safety. Built on top of the [core Weaviate C# client](https://github.com/weaviate/csharp-client), it handles object mapping, vector configuration, cross-references, and dependency injection.
 
 <br/>
 
@@ -52,7 +52,7 @@ foreach (var r in results)
 ```
 
 > [!TIP]
-> **Want low-level API access?** Check out the [core Weaviate C# client](https://github.com/weaviate/weaviate-dotnet-client) for direct REST/gRPC operations.
+> **Want low-level API access?** Check out the [core Weaviate C# client](https://github.com/weaviate/csharp-client) for direct REST/gRPC operations.
 
 ---
 
@@ -409,9 +409,9 @@ graph TB
 
 | Managed Client | Weaviate | .NET |
 |---|---|---|
-| Latest | 1.31 — 1.34+ | 8.0, 9.0 |
+| Latest | 1.32 — 1.36+ | 8.0, 9.0 |
 
-Tested in CI against Weaviate **1.31.20**, **1.32.17**, **1.33.5**, and **1.34.0**.
+Tested in CI against Weaviate **1.32.17**, **1.33.5**, **1.34.0**, **1.35.5**, and **1.36.3**.
 
 ---
 
@@ -437,7 +437,7 @@ Tested in CI against Weaviate **1.31.20**, **1.32.17**, **1.33.5**, and **1.34.0
 
 ```bash
 # Start local Weaviate (requires >= 1.31.0)
-./ci/start_weaviate.sh            # defaults to 1.31.0
+./ci/start_weaviate.sh            # defaults to 1.34.0
 ./ci/start_weaviate.sh 1.34.0     # or specify a version
 
 # Run all tests
@@ -486,7 +486,6 @@ The hook formats only staged C# files, keeping commits clean and consistent.
 ## Community & Support
 
 - **[Weaviate Forum](https://forum.weaviate.io/)** — Questions and discussions
-- **[Weaviate Slack](https://weaviate.io/slack)** — Live chat with the community
 - **[GitHub Issues](https://github.com/weaviate/csharp-client-managed/issues)** — Bug reports and feature requests
 - **[Email](mailto:devex@weaviate.io)** — devex@weaviate.io
 
@@ -503,8 +502,8 @@ BSD-3-Clause — see [LICENSE](LICENSE) for details.
 ## Related Projects
 
 - **[Weaviate](https://github.com/weaviate/weaviate)** — The AI-native vector database
-- **[Weaviate C# Client](https://github.com/weaviate/weaviate-dotnet-client)** — Core REST/gRPC client
-- **[Weaviate Documentation](https://weaviate.io/developers/weaviate)** — Official docs
+- **[Weaviate C# Client](https://github.com/weaviate/csharp-client)** — Core REST/gRPC client
+- **[Weaviate Documentation](https://docs.weaviate.io/weaviate)** — Official docs
 
 ---
 
