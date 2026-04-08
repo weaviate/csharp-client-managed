@@ -78,6 +78,19 @@ builder.Services.AddWeaviateContext<BlogContext>(
 );
 ```
 
+### SDK Integrations (X-Weaviate-Client-Integration Header)
+
+When `AddWeaviateContext` is called, it automatically sets the `X-Weaviate-Client-Integration` header so the Weaviate server can identify traffic from the managed client.
+
+If you are building a higher-level SDK or framework on top of `Weaviate.Client.Managed`, append your own identity at the core DI layer via `AddWeaviate()`. Multiple tokens are space-separated in the header value:
+
+```csharp
+// Results in: X-Weaviate-Client-Integration: weaviate-client-csharp-managed/1.x.x my-framework/2.3.0
+builder.Services.AddWeaviate(opts =>
+    opts.AddIntegration("my-framework/2.3.0"));
+builder.Services.AddWeaviateContext<BlogContext>();
+```
+
 ### OnConfiguring Override
 
 Context instances can override `OnConfiguring()` to set defaults, which take precedence over DI configuration:

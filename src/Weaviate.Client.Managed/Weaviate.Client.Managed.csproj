@@ -76,7 +76,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Weaviate.Client" Version="1.0.1" />
+    <PackageReference Include="Weaviate.Client" Version="1.0.2" />
   </ItemGroup>
 
   <!-- Include Roslyn analyzers in the package -->

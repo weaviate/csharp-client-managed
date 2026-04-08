@@ -1,4 +1,5 @@
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
 using Weaviate.Client.DependencyInjection;
 using Xunit;
 
@@ -231,6 +232,24 @@ public class WeaviateContextDITests
 
         // Assert
         Assert.Same(client, context.Client);
+    }
+
+    [Fact]
+    public void AddWeaviateContext_SetsIntegrationHeader()
+    {
+        var services = new ServiceCollection();
+        services.AddWeaviateLocal(eagerInitialization: false);
+        services.AddWeaviateContext<TestStoreContext>();
+
+        var provider = services.BuildServiceProvider();
+        var options = provider.GetRequiredService<IOptions<WeaviateOptions>>().Value;
+
+        Assert.NotNull(options.Headers);
+        Assert.True(options.Headers.ContainsKey("X-Weaviate-Client-Integration"));
+        Assert.Matches(
+            @"^weaviate-client-csharp-managed/\d+",
+            options.Headers["X-Weaviate-Client-Integration"]
+        );
     }
 
     #region Test Types

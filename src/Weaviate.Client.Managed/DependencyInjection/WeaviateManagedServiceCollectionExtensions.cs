@@ -3,7 +3,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Weaviate.Client.Managed.Context;
+using Weaviate.Client.DependencyInjection;
 
 namespace Weaviate.Client.Managed.DependencyInjection;
 
@@ -12,6 +12,11 @@ namespace Weaviate.Client.Managed.DependencyInjection;
 /// </summary>
 public static class WeaviateManagedServiceCollectionExtensions
 {
+    /// <summary>
+    /// The integration package name for the managed client.
+    /// </summary>
+    internal const string IntegrationName = "weaviate-client-csharp-managed";
+
     /// <summary>
     /// Registers a <see cref="WeaviateContext"/> subclass with the dependency injection container.
     /// </summary>
@@ -32,6 +37,14 @@ public static class WeaviateManagedServiceCollectionExtensions
     )
         where TContext : WeaviateContext
     {
+        // Append managed client identity to X-Weaviate-Client-Integration via IConfigureOptions
+        // so it is applied before WeaviateClient constructs its HttpClient/gRPC client.
+        services
+            .AddOptions<WeaviateOptions>()
+            .Configure(opts =>
+                opts.AddIntegration(WeaviateDefaults.IntegrationAgent(IntegrationName))
+            );
+
         // Configure typed options for this context type
         if (configureOptions != null)
         {

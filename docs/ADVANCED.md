@@ -581,6 +581,35 @@ foreach (var s in summaries)
 
 ---
 
+## SDK Integration Header
+
+When using the managed client, the `X-Weaviate-Client-Integration` header is automatically sent with every request so the Weaviate server can identify and track managed client traffic in metrics.
+
+### DI path
+
+`AddWeaviateContext` sets the header automatically. If you are building a higher-level framework on top of the managed client, append your own identity at the core DI layer:
+
+```csharp
+// X-Weaviate-Client-Integration: weaviate-client-csharp-managed/1.x.x my-framework/2.3.0
+builder.Services.AddWeaviate(opts =>
+    opts.AddIntegration("my-framework/2.3.0"));
+builder.Services.AddWeaviateContext<MyContext>();
+```
+
+### Non-DI path
+
+When constructing `WeaviateContext` directly (without DI), call `WithManagedIntegrationHeader()` on your `ClientConfiguration`:
+
+```csharp
+var config = new ClientConfiguration("localhost")
+    .WithManagedIntegrationHeader();
+
+var client = new WeaviateClient(config);
+var context = new MyContext(client);
+```
+
+---
+
 ## Collection Lifecycle Hooks
 
 The `OnCollectionConfig` pattern allows intercepting collection creation.
